@@ -1,0 +1,36 @@
+# version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    container_name: ukmeltdown_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    container_name: ukmeltdown_app
+    depends_on:
+      - db
+    ports:
+      - "8050:8050"
+    environment:
+      PYTHONPATH: /app
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      FRED_API_KEY: ${FRED_API_KEY}
+    volumes:
+      - ./app:/app
+      - ./data:/app/data
+    command: python dashboard.py
+
+volumes:
+  db-data:

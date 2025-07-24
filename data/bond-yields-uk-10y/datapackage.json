@@ -1,0 +1,365 @@
+{
+  "bytes": 21654,
+  "count_of_rows": 182,
+  "datahub": {
+    "created": "2017-11-08T23:58:38.006088",
+    "findability": "published",
+    "flowid": "core/bond-yields-uk-10y/67",
+    "modified": "2020-08-31T00:00:46.364074",
+    "owner": "core",
+    "ownerid": "core"
+  },
+  "hash": "0898d4dd2f2c2d7b967a0b8cab95b571",
+  "id": "core/bond-yields-uk-10y",
+  "licenses": [
+    {
+      "id": "odc-pddl",
+      "name": "public_domain_dedication_and_license",
+      "path": "http://opendatacommons.org/licenses/pddl/"
+    }
+  ],
+  "name": "bond-yields-uk-10y",
+  "profile": "data-package",
+  "resources": [
+    {
+      "bytes": 2793,
+      "count_of_rows": 146,
+      "datahub": {
+        "type": "original"
+      },
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/64b7a75fd50ebc60dbdc439de3fe9641.csv",
+      "encoding": "ISO-8859-2",
+      "format": "csv",
+      "hash": "61ea2f9aa01dceb1858fa973d250693d",
+      "mediatype": "text/csv",
+      "name": "quarterly_original",
+      "path": "archive/quarterly.csv",
+      "pathType": "local",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "%Y-%m-%d",
+            "name": "Date",
+            "type": "date"
+          },
+          {
+            "decimalChar": ".",
+            "description": "Quarterly average yield from British Government Securities, 10 year Nominal Par Yield",
+            "format": "default",
+            "groupChar": "",
+            "name": "Rate",
+            "type": "number"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "bytes": 700,
+      "count_of_rows": 36,
+      "datahub": {
+        "type": "original"
+      },
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/13149cdc4b72166d35738068de016490.csv",
+      "encoding": "ISO-8859-2",
+      "format": "csv",
+      "hash": "d6aaaa5a1f6f70cf4f1bd98f59263218",
+      "mediatype": "text/csv",
+      "name": "annual_original",
+      "path": "archive/annual.csv",
+      "pathType": "local",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "%Y-%m-%d",
+            "name": "Year",
+            "type": "date"
+          },
+          {
+            "decimalChar": ".",
+            "description": "Annual average yield from British Government Securities, 10 year Nominal Par Yield",
+            "format": "default",
+            "groupChar": "",
+            "name": "Rate",
+            "type": "number"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "bytes": 862,
+      "datahub": {
+        "type": "derived/report"
+      },
+      "description": "Validation report for tabular data",
+      "dpp:streamedFrom": "/tmp/tmpkvoxc8ds/core/bond-yields-uk-10y/validation_report/data/9506aee75bfe802ccd1309de77ace4c1/validation_report.json",
+      "format": "json",
+      "hash": "9506aee75bfe802ccd1309de77ace4c1",
+      "name": "validation_report",
+      "path": "data/validation_report.json",
+      "profile": "data-resource"
+    },
+    {
+      "bytes": 2793,
+      "count_of_rows": 146,
+      "datahub": {
+        "derivedFrom": [
+          "quarterly"
+        ],
+        "type": "derived/csv"
+      },
+      "delimiter": ",",
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpkvoxc8ds/core/bond-yields-uk-10y/quarterly_csv/data/61ea2f9aa01dceb1858fa973d250693d/quarterly_csv.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "61ea2f9aa01dceb1858fa973d250693d",
+      "mediatype": "text/csv",
+      "name": "quarterly_csv",
+      "path": "data/quarterly_csv.csv",
+      "pathType": "local",
+      "profile": "tabular-data-resource",
+      "quotechar": "\"",
+      "rowcount": 146,
+      "schema": {
+        "fields": [
+          {
+            "format": "%Y-%m-%d",
+            "name": "Date",
+            "type": "date"
+          },
+          {
+            "decimalChar": ".",
+            "description": "Quarterly average yield from British Government Securities, 10 year Nominal Par Yield",
+            "format": "default",
+            "groupChar": "",
+            "name": "Rate",
+            "type": "number"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 700,
+      "count_of_rows": 36,
+      "datahub": {
+        "derivedFrom": [
+          "annual"
+        ],
+        "type": "derived/csv"
+      },
+      "delimiter": ",",
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpkvoxc8ds/core/bond-yields-uk-10y/annual_csv/data/d6aaaa5a1f6f70cf4f1bd98f59263218/annual_csv.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "d6aaaa5a1f6f70cf4f1bd98f59263218",
+      "mediatype": "text/csv",
+      "name": "annual_csv",
+      "path": "data/annual_csv.csv",
+      "pathType": "local",
+      "profile": "tabular-data-resource",
+      "quotechar": "\"",
+      "rowcount": 36,
+      "schema": {
+        "fields": [
+          {
+            "format": "%Y-%m-%d",
+            "name": "Year",
+            "type": "date"
+          },
+          {
+            "decimalChar": ".",
+            "description": "Annual average yield from British Government Securities, 10 year Nominal Par Yield",
+            "format": "default",
+            "groupChar": "",
+            "name": "Rate",
+            "type": "number"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 5703,
+      "count_of_rows": 146,
+      "datahub": {
+        "derivedFrom": [
+          "quarterly"
+        ],
+        "type": "derived/json"
+      },
+      "delimiter": ",",
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpkvoxc8ds/core/bond-yields-uk-10y/quarterly_json/data/170473d2a939930586fb1762c6353a97/quarterly_json.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "170473d2a939930586fb1762c6353a97",
+      "mediatype": "text/csv",
+      "name": "quarterly_json",
+      "path": "data/quarterly_json.json",
+      "pathType": "local",
+      "profile": "tabular-data-resource",
+      "quotechar": "\"",
+      "rowcount": 146,
+      "schema": {
+        "fields": [
+          {
+            "format": "%Y-%m-%d",
+            "name": "Date",
+            "type": "date"
+          },
+          {
+            "decimalChar": ".",
+            "description": "Quarterly average yield from British Government Securities, 10 year Nominal Par Yield",
+            "format": "default",
+            "groupChar": "",
+            "name": "Rate",
+            "type": "number"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 1410,
+      "count_of_rows": 36,
+      "datahub": {
+        "derivedFrom": [
+          "annual"
+        ],
+        "type": "derived/json"
+      },
+      "delimiter": ",",
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpkvoxc8ds/core/bond-yields-uk-10y/annual_json/data/fac844a5439b0853a4e1556cae80fdab/annual_json.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "fac844a5439b0853a4e1556cae80fdab",
+      "mediatype": "text/csv",
+      "name": "annual_json",
+      "path": "data/annual_json.json",
+      "pathType": "local",
+      "profile": "tabular-data-resource",
+      "quotechar": "\"",
+      "rowcount": 36,
+      "schema": {
+        "fields": [
+          {
+            "format": "%Y-%m-%d",
+            "name": "Year",
+            "type": "date"
+          },
+          {
+            "decimalChar": ".",
+            "description": "Annual average yield from British Government Securities, 10 year Nominal Par Yield",
+            "format": "default",
+            "groupChar": "",
+            "name": "Rate",
+            "type": "number"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 3200,
+      "dpp:streamedFrom": "/tmp/tmp5kko715f/README.md",
+      "format": "md",
+      "name": "readme",
+      "path": "README.md"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Bank of England",
+      "path": "http://www.bankofengland.co.uk/boeapps/iadb/index.asp?Travel=NIxIRx&levels=1&XNotes=Y&C=DUS&G0Xtop.x=51&G0Xtop.y=7&XNotes2=Y&Nodes=X41514X41515X41516X41517X55047X76909X4051X4052X4128X33880X4053X4058&SectionRequired=I&HideNums=-1&ExtraInfo=true#BM",
+      "title": "Bank of England"
+    }
+  ],
+  "title": "10y UK Government Bond Yields (long-term interest rate)",
+  "views": [
+    {
+      "name": "graph",
+      "spec": {
+        "group": "Date",
+        "series": [
+          "Rate"
+        ],
+        "type": "line"
+      },
+      "specType": "simple",
+      "title": "Average yield from British Government Securities, 10 year Nominal Par Yield"
+    }
+  ]
+}
